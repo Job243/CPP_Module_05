@@ -6,7 +6,7 @@
 /*   By: jmafueni <jmafueni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 18:04:02 by jmafueni          #+#    #+#             */
-/*   Updated: 2025/09/03 20:39:41 by jmafueni         ###   ########.fr       */
+/*   Updated: 2025/09/04 18:33:48 by jmafueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,20 @@ int main()
 	try
 	{
 		Bureaucrat bob("Bob", 50);
-		Form f1("Contract A", 45, 20);
+		Bureaucrat jim("Jim", 120);
+
+		Form f1("Top Secret", 45, 20);
+		Form f2("Basic Report", 100, 80);
 
 		std::cout << f1 << std::endl;
+		std::cout << f2 << std::endl;
 
-		// bob.signForm(f1); // essaie de signer
+		bob.signForm(f1);  // trop bas, devrait échouer
+		bob.signForm(f2);  // assez haut, devrait marcher
+		jim.signForm(f2);  // échoue car déjà signé ou grade trop bas
+
 		std::cout << f1 << std::endl;
-	}
-	catch (std::exception & e)
-	{
-		std::cout << "Exception: " << e.what() << std::endl;
-	}
-
-	try
-	{
-		Form f2("ImpossibleForm", 0, 200); // devrait lancer une exception
+		std::cout << f2 << std::endl;
 	}
 	catch (std::exception & e)
 	{
@@ -41,4 +40,3 @@ int main()
 
 	return 0;
 }
-

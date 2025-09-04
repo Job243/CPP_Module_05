@@ -6,12 +6,12 @@
 /*   By: jmafueni <jmafueni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 18:04:43 by jmafueni          #+#    #+#             */
-/*   Updated: 2025/09/04 18:37:21 by jmafueni         ###   ########.fr       */
+/*   Updated: 2025/09/04 21:11:00 by jmafueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-# include "Form.hpp"
+# include "AForm.hpp"
 
 Bureaucrat::Bureaucrat():name("noname"),grade(150)
 {
@@ -66,7 +66,7 @@ Bureaucrat & Bureaucrat::operator=(Bureaucrat const & rhs)
 	return *this;
 }
 
-void Bureaucrat::signForm(Form & form)
+void Bureaucrat::signForm(AForm & form)
 {
 	try
 	{
@@ -76,6 +76,20 @@ void Bureaucrat::signForm(Form & form)
 	catch (std::exception & e)
 	{
 		std::cout << this->getName() << " couldn’t sign " << form.getName()
+				<< " because " << e.what() << std::endl;
+	}
+}
+
+void Bureaucrat::executeForm(AForm const & form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->getName() << " executed " << form.getName() << std::endl;
+	}
+	catch (std::exception & e)
+	{
+		std::cout << this->getName() << " couldn't execute " << form.getName()
 				<< " because " << e.what() << std::endl;
 	}
 }

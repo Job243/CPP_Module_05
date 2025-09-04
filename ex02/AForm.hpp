@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmafueni <jmafueni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 20:50:08 by jmafueni          #+#    #+#             */
-/*   Updated: 2025/09/04 21:08:03 by jmafueni         ###   ########.fr       */
+/*   Updated: 2025/09/04 21:38:35 by jmafueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
 	private:
 		std::string const name;
@@ -25,12 +25,15 @@ class Form
 		int	const gradeToSign;
 		int const gradeToExecute;
 	public:
-		Form();
-		Form(std::string const & name, int gradeToSign, int gradeToExecute);
-		Form(Form const & src);
-		~Form();
+		AForm();
+		AForm(std::string const & name, int gradeToSign, int gradeToExecute);
+		AForm(AForm const & src);
+		virtual ~AForm();
 
-		Form & operator=(Form const & rhs);
+		AForm & operator=(AForm const & rhs);
+		virtual void execute(Bureaucrat const & executor) const = 0;
+
+		
 		std::string	getName() const;
 		bool		getIsSigned() const;
 		int			getGradeToSign() const;
@@ -40,19 +43,18 @@ class Form
 		class GradeTooHighException : public std::exception 
 		{
 			public:
-				const char* what() const throw()
-				{
-					return "Grade is too high!";
-				}
+				const char* what() const throw() { return "Grade is too high!";}
 		};
 		class GradeTooLowException : public std::exception 
 		{
 			public:
-				const char* what() const throw()
-				{
-					return "Grade too low!";
-				}
+				const char* what() const throw() { return "Grade too low!";}
 		};
+		class FormNotSignedException : public std::exception
+		{
+    		public:
+        		const char* what() const throw() { return "Form is not signed!";}
+    };
 };
 
-std::ostream & operator<<(std::ostream & os, Form const & form);
+std::ostream & operator<<(std::ostream & os, AForm const & form);
