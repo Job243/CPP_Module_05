@@ -6,7 +6,7 @@
 /*   By: jmafueni <jmafueni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 18:04:43 by jmafueni          #+#    #+#             */
-/*   Updated: 2025/09/02 20:26:39 by jmafueni         ###   ########.fr       */
+/*   Updated: 2025/10/17 22:01:46 by jmafueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,10 @@ Bureaucrat & Bureaucrat::operator=(Bureaucrat const & rhs)
 	if (this != &rhs)
 		this->grade = rhs.grade;
 	return *this;
+}
+
+std::ostream & operator<<(std::ostream & os, Bureaucrat const & bureaucrat)
+{
+    os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
+    return os;
 }

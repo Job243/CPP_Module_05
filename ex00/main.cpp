@@ -6,7 +6,7 @@
 /*   By: jmafueni <jmafueni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 18:04:02 by jmafueni          #+#    #+#             */
-/*   Updated: 2025/09/02 20:16:38 by jmafueni         ###   ########.fr       */
+/*   Updated: 2025/10/17 18:34:35 by jmafueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,9 @@ int main()
 		Bureaucrat b1("Alice", 2);
 		std::cout << b1.getName() << ", grade: " << b1.getGrade() << std::endl;
 
-		b1.incrementGrade(); // devrait passer à 1
+		b1.incrementGrade();
 		std::cout << b1.getName() << ", grade: " << b1.getGrade() << std::endl;
 
-		// Ici ça va lancer une exception (grade trop haut)
 		b1.incrementGrade();
 	}
 	catch (std::exception & e) {
@@ -35,10 +34,9 @@ int main()
 		Bureaucrat b2("Bob", 149);
 		std::cout << b2.getName() << ", grade: " << b2.getGrade() << std::endl;
 
-		b2.decrementGrade(); // passe à 150
+		b2.decrementGrade(); 
 		std::cout << b2.getName() << ", grade: " << b2.getGrade() << std::endl;
 
-		// Ici ça va lancer une exception (grade trop bas)
 		b2.decrementGrade();
 	}
 	catch (std::exception & e) {
@@ -48,7 +46,6 @@ int main()
 	std::cout << "------------------------" << std::endl;
 
 	try {
-		// Ici ça lance direct une exception (grade invalide)
 		Bureaucrat b3("Charlie", 151);
 		std::cout << b3.getName() << ", grade: " << b3.getGrade() << std::endl;
 	}

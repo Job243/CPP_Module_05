@@ -6,7 +6,7 @@
 /*   By: jmafueni <jmafueni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 18:04:02 by jmafueni          #+#    #+#             */
-/*   Updated: 2025/09/04 21:39:45 by jmafueni         ###   ########.fr       */
+/*   Updated: 2025/10/17 21:45:04 by jmafueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,12 @@
 
 int main()
 {
+	
 	try {
-		// Création de bureaucrates
 		Bureaucrat bob("Bob", 50);
 		Bureaucrat alice("Alice", 5);
-		Bureaucrat jim("Jim", 150);
+		Bureaucrat jim("Jim", 70);
 
-		// Création des formulaires
 		ShrubberyCreationForm shrub("HomeGarden");
 		RobotomyRequestForm robo("Bender");
 		PresidentialPardonForm pardon("Marvin");
@@ -34,22 +33,19 @@ int main()
 		std::cout << robo << std::endl;
 		std::cout << pardon << std::endl;
 
-		// Tentative de signature
-		bob.signForm(shrub);     // devrait réussir
-		jim.signForm(robo);      // devrait échouer (grade trop bas)
-		alice.signForm(pardon);  // devrait réussir
+		bob.signForm(shrub);
+		jim.signForm(robo);
+		alice.signForm(pardon);
 
 		std::cout << shrub << std::endl;
 		std::cout << robo << std::endl;
 		std::cout << pardon << std::endl;
 
-		// Tentative d'exécution
-		bob.executeForm(shrub);      // devrait réussir
-		alice.executeForm(robo);     // devrait échouer (non signé)
-		alice.executeForm(pardon);   // devrait réussir
+		bob.executeForm(shrub);
+		alice.executeForm(robo);
+		alice.executeForm(pardon);
 
-		// Tentative d'exécution avec grade trop bas
-		jim.executeForm(shrub);      // devrait échouer (grade trop bas)
+		jim.executeForm(shrub);      
 
 	} catch (std::exception & e) {
 		std::cout << "Exception: " << e.what() << std::endl;

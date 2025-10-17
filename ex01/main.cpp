@@ -6,7 +6,7 @@
 /*   By: jmafueni <jmafueni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 18:04:02 by jmafueni          #+#    #+#             */
-/*   Updated: 2025/09/04 18:33:48 by jmafueni         ###   ########.fr       */
+/*   Updated: 2025/10/17 18:36:28 by jmafueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ int main()
 		std::cout << f1 << std::endl;
 		std::cout << f2 << std::endl;
 
-		bob.signForm(f1);  // trop bas, devrait échouer
-		bob.signForm(f2);  // assez haut, devrait marcher
-		jim.signForm(f2);  // échoue car déjà signé ou grade trop bas
+		bob.signForm(f1);
+		bob.signForm(f2);
+		jim.signForm(f2);
 
 		std::cout << f1 << std::endl;
 		std::cout << f2 << std::endl;
@@ -37,6 +37,5 @@ int main()
 	{
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
-
 	return 0;
 }

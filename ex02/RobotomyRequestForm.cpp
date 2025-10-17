@@ -6,7 +6,7 @@
 /*   By: jmafueni <jmafueni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 19:30:50 by jmafueni          #+#    #+#             */
-/*   Updated: 2025/09/04 21:41:35 by jmafueni         ###   ########.fr       */
+/*   Updated: 2025/10/17 21:46:21 by jmafueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 		throw AForm::FormNotSignedException();
 	if (executor.getGrade() > getGradeToExecute())
 		throw AForm::GradeTooLowException();
-
+	srand(time(0));
 	std::cout << "* drilling noises *" << std::endl;
 	if (rand() % 2)
 		std::cout << target << " has been robotomized successfully." << std::endl;
