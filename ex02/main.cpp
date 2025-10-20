@@ -6,7 +6,7 @@
 /*   By: jmafueni <jmafueni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 18:04:02 by jmafueni          #+#    #+#             */
-/*   Updated: 2025/10/17 21:45:04 by jmafueni         ###   ########.fr       */
+/*   Updated: 2025/10/20 19:18:13 by jmafueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 int main()
 {
+	std::srand(std::time(NULL));
 	
 	try {
 		Bureaucrat bob("Bob", 50);
@@ -29,6 +30,10 @@ int main()
 		RobotomyRequestForm robo("Bender");
 		PresidentialPardonForm pardon("Marvin");
 
+		std::cout << bob << std::endl;
+		std::cout << alice << std::endl;
+		std::cout << jim << std::endl;		
+		
 		std::cout << shrub << std::endl;
 		std::cout << robo << std::endl;
 		std::cout << pardon << std::endl;

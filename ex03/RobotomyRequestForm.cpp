@@ -6,14 +6,12 @@
 /*   By: jmafueni <jmafueni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 19:30:50 by jmafueni          #+#    #+#             */
-/*   Updated: 2025/09/04 21:41:35 by jmafueni         ###   ########.fr       */
+/*   Updated: 2025/10/20 19:15:36 by jmafueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 #include "Bureaucrat.hpp"
-#include <cstdlib>
-#include <ctime> 
 
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target): AForm("Robotomyrequest", 72, 45), target(target)

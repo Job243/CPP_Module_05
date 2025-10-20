@@ -6,7 +6,7 @@
 /*   By: jmafueni <jmafueni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 18:05:02 by jmafueni          #+#    #+#             */
-/*   Updated: 2025/09/04 21:10:35 by jmafueni         ###   ########.fr       */
+/*   Updated: 2025/10/20 19:15:46 by jmafueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 # include <string>
 # include <iostream>
+# include <cstdlib>
+# include <ctime> 
 
 class AForm;
 
@@ -48,3 +50,6 @@ public:
 		const char* what() const throw() { return "Grade too low!";}
 	};
 };
+
+std::ostream & operator<<(std::ostream & os, Bureaucrat const & bureaucrat);
+

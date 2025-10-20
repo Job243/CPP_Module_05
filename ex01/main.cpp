@@ -6,7 +6,7 @@
 /*   By: jmafueni <jmafueni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 18:04:02 by jmafueni          #+#    #+#             */
-/*   Updated: 2025/10/17 18:36:28 by jmafueni         ###   ########.fr       */
+/*   Updated: 2025/10/20 18:03:59 by jmafueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ int main()
 	{
 		Bureaucrat bob("Bob", 50);
 		Bureaucrat jim("Jim", 120);
+
+		std::cout << bob << std::endl;
+		std::cout << jim << std::endl;
+
 
 		Form f1("Top Secret", 45, 20);
 		Form f2("Basic Report", 100, 80);

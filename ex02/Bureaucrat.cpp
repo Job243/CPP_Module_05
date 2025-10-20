@@ -6,7 +6,7 @@
 /*   By: jmafueni <jmafueni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 18:04:43 by jmafueni          #+#    #+#             */
-/*   Updated: 2025/09/04 21:11:00 by jmafueni         ###   ########.fr       */
+/*   Updated: 2025/10/20 18:00:54 by jmafueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,3 +94,8 @@ void Bureaucrat::executeForm(AForm const & form)
 	}
 }
 
+std::ostream & operator<<(std::ostream & os, Bureaucrat const & bureaucrat)
+{
+    os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
+    return os;
+}

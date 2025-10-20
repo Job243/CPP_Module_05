@@ -6,7 +6,7 @@
 /*   By: jmafueni <jmafueni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 18:04:02 by jmafueni          #+#    #+#             */
-/*   Updated: 2025/10/17 18:27:14 by jmafueni         ###   ########.fr       */
+/*   Updated: 2025/10/20 19:14:28 by jmafueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 
 int main()
 {
+	std::srand(std::time(NULL));
+	
 	Intern someRandomIntern;
 
 	AForm* form1 = someRandomIntern.makeForm("shrubbery creation", "home");

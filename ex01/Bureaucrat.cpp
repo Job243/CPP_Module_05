@@ -6,7 +6,7 @@
 /*   By: jmafueni <jmafueni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 18:04:43 by jmafueni          #+#    #+#             */
-/*   Updated: 2025/09/04 18:37:21 by jmafueni         ###   ########.fr       */
+/*   Updated: 2025/10/20 18:00:48 by jmafueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,5 +78,11 @@ void Bureaucrat::signForm(Form & form)
 		std::cout << this->getName() << " couldn’t sign " << form.getName()
 				<< " because " << e.what() << std::endl;
 	}
+}
+
+std::ostream & operator<<(std::ostream & os, Bureaucrat const & bureaucrat)
+{
+    os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
+    return os;
 }
 

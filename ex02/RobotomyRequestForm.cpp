@@ -6,15 +6,12 @@
 /*   By: jmafueni <jmafueni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 19:30:50 by jmafueni          #+#    #+#             */
-/*   Updated: 2025/10/17 21:46:21 by jmafueni         ###   ########.fr       */
+/*   Updated: 2025/10/20 19:15:07 by jmafueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 #include "Bureaucrat.hpp"
-#include <cstdlib>
-#include <ctime> 
-
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target): AForm("Robotomyrequest", 72, 45), target(target)
 {
@@ -42,7 +39,7 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 		throw AForm::FormNotSignedException();
 	if (executor.getGrade() > getGradeToExecute())
 		throw AForm::GradeTooLowException();
-	srand(time(0));
+	
 	std::cout << "* drilling noises *" << std::endl;
 	if (rand() % 2)
 		std::cout << target << " has been robotomized successfully." << std::endl;

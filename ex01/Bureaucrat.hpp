@@ -6,7 +6,7 @@
 /*   By: jmafueni <jmafueni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 18:05:02 by jmafueni          #+#    #+#             */
-/*   Updated: 2025/09/04 18:37:18 by jmafueni         ###   ########.fr       */
+/*   Updated: 2025/10/20 18:01:53 by jmafueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,3 +46,6 @@ public:
 		const char* what() const throw() { return "Grade too low!";}
 	};
 };
+
+std::ostream & operator<<(std::ostream & os, Bureaucrat const & bureaucrat);
+
